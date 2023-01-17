@@ -9,6 +9,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.targetsdkupgradesample32_33.R;
@@ -22,6 +23,7 @@ public class WifiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         hotspotManager = new WifiHotspotManager(this);
+        Log.d("Test-log","WifiActibvity");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
