@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
 
     <application
         android:allowBackup="true"
@@ -16,15 +17,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TargetSDKUpgradeSample32_33">
         <activity
-            android:name=".nonsdk.ReflectionActivity"
-            android:exported="true" >
+            android:name=".bodysensor.BodySensorsActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+
+        <activity
+            android:name=".nonsdk.ReflectionActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
@@ -34,9 +44,7 @@
             android:exported="false" />
         <activity
             android:name=".wifi.WifiActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
