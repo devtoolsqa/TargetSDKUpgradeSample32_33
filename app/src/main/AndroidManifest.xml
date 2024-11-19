@@ -69,6 +69,10 @@
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".foreground_service.DataSyncService"
+            android:foregroundServiceType="dataSync" />
     </application>
 
 </manifest>
