@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
 
     <application
         android:allowBackup="true"
@@ -19,14 +20,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TargetSDKUpgradeSample32_33">
+
         <activity
             android:name=".webview.WebviewContentActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".bodysensor.BodySensorsActivity"
@@ -73,6 +75,17 @@
         <service
             android:name=".foreground_service.DataSyncService"
             android:foregroundServiceType="dataSync" />
+
+        <activity android:name=".donot_distrurb_code.MyRuleConfigurationActivity"
+            android:exported="true">
+            <meta-data android:name="android.service.zen.automatic.ruleType" android:value="My Rule" />
+            <intent-filter>
+                <action android:name="android.app.action.AUTOMATIC_ZEN_RULE"/>
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".foreground_service.AudioFocusService"
+            android:foregroundServiceType="mediaPlayback" />
     </application>
 
 </manifest>

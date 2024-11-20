@@ -21,6 +21,7 @@ class PhoneCallService : Service() {
         val phoneNumber = intent?.getStringExtra("phone_number")
 
         createNotificationChannel()
+
         val notification = createNotification(phoneNumber)
         startForeground(1, notification)
 
